@@ -45,14 +45,13 @@ function Header() {
 
             {/* PDF Tools Dropdown */}
             <li className="nav-item dropdown">
-              <a
+              <Link
                 className="nav-link dropdown-toggle text-dark"
-                href="#"
-                role="button"
                 data-bs-toggle="dropdown"
+                to="/pdf-tools"
               >
                 PDF Tools
-              </a>
+              </Link>
               <ul className="dropdown-menu border-0 shadow-lg mt-2 rounded-3">
                 <li>
                   <Link className="dropdown-item py-2" to="/pdf-to-word">

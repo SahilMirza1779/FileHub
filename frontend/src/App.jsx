@@ -1,14 +1,17 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-import Home from "./pages/Home"; // We have imported the home page here.
+import Home from "./pages/Home";
+import PdfTools from "./pages/PdfTools";
+import ToolPage from "./pages/ToolPage";
 
 function App() {
   return (
     <BrowserRouter>
       <Header />
       <Routes>
-        {/* The Home component will now load here. */}
         <Route path="/" element={<Home />} />
+        <Route path="/pdf-tools" element={<PdfTools />} />
+        <Route path="/tool/:toolId" element={<ToolPage />} />
       </Routes>
     </BrowserRouter>
   );
