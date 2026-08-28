@@ -1,8 +1,12 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
-// Here we are importing our logo.
+import { LanguageContext } from "../context/LanguageContext";
 import logo from "../assets/logo.jpg";
 
 function Header() {
+  // Yahan humne language ko track karne ke liye ek state banayi hai
+  const { language, setLanguage } = useContext(LanguageContext);
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
       <div className="container-fluid px-4">
@@ -45,29 +49,41 @@ function Header() {
 
             {/* PDF Tools Dropdown */}
             <li className="nav-item dropdown">
-              <Link
+              <a
                 className="nav-link dropdown-toggle text-dark"
+                href="#"
+                role="button"
                 data-bs-toggle="dropdown"
-                to="/pdf-tools"
               >
                 PDF Tools
-              </Link>
-              <ul className="dropdown-menu border-0 shadow-lg mt-2 rounded-3">
+              </a>
+              <ul className="dropdown-menu border-0 shadow-sm mt-2 rounded-3">
                 <li>
-                  <Link className="dropdown-item py-2" to="/pdf-to-word">
+                  <Link className="dropdown-item py-2" to="/tool/pdf-to-word">
                     <i className="bi bi-file-earmark-word text-primary me-2"></i>
                     PDF to Word
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item py-2" to="/merge-pdf">
+                  <Link className="dropdown-item py-2" to="/tool/merge-pdf">
                     <i className="bi bi-files text-purple me-2"></i>Merge PDF
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item py-2" to="/edit-pdf">
+                  <Link className="dropdown-item py-2" to="/tool/edit-pdf">
                     <i className="bi bi-pencil-square text-success me-2"></i>
                     Edit PDF
+                  </Link>
+                </li>
+                <li>
+                  <hr className="dropdown-divider" />
+                </li>
+                <li>
+                  <Link
+                    className="dropdown-item py-2 text-primary"
+                    to="/pdf-tools"
+                  >
+                    View All PDF Tools
                   </Link>
                 </li>
               </ul>
@@ -101,17 +117,90 @@ function Header() {
           </ul>
 
           {/* Right Side Action Buttons */}
-          <div className="d-flex align-items-center gap-4">
-            <span
-              className="fw-semibold text-dark"
-              style={{ cursor: "pointer", fontSize: "15px" }}
-            >
-              <i className="bi bi-globe"></i> EN{" "}
-              <i
-                className="bi bi-chevron-down ms-1"
-                style={{ fontSize: "12px" }}
-              ></i>
-            </span>
+          <div className="d-flex align-items-center gap-4 mt-3 mt-lg-0">
+            {/* --- NAYA LANGUAGE DROPDOWN YAHAN HAI --- */}
+            <div className="dropdown">
+              <span
+                className="fw-semibold text-dark d-flex align-items-center dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                style={{ cursor: "pointer", fontSize: "15px" }}
+              >
+                <i className="bi bi-globe me-1"></i> {language}
+              </span>
+              <ul
+                className="dropdown-menu dropdown-menu-end border-0 shadow-sm mt-2 rounded-3"
+                style={{ minWidth: "130px" }}
+              >
+                <li>
+                  <button
+                    className="dropdown-item py-2"
+                    onClick={() => setLanguage("EN")}
+                  >
+                    English (EN)
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className="dropdown-item py-2"
+                    onClick={() => setLanguage("HI")}
+                  >
+                    Hindi (HI)
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className="dropdown-item py-2"
+                    onClick={() => setLanguage("GU")}
+                  >
+                    Gujarati (GU)
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className="dropdown-item py-2"
+                    onClick={() => setLanguage("MR")}
+                  >
+                    Marathi (MR)
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className="dropdown-item py-2"
+                    onClick={() => setLanguage("UR")}
+                  >
+                    Urdu (UR)
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className="dropdown-item py-2"
+                    onClick={() => setLanguage("AR")}
+                  >
+                    Arabic (AR)
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className="dropdown-item py-2"
+                    onClick={() => setLanguage("ES")}
+                  >
+                    Español (ES)
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className="dropdown-item py-2"
+                    onClick={() => setLanguage("FR")}
+                  >
+                    Français (FR)
+                  </button>
+                </li>
+              </ul>
+            </div>
+            {/* ---------------------------------------- */}
+
             <Link
               to="/login"
               className="text-dark text-decoration-none fw-semibold"
