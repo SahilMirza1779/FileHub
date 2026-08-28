@@ -3,73 +3,103 @@ import logo from "../assets/logo.jpg";
 
 function Footer() {
   return (
-    <footer className="bg-light pt-5 pb-4 border-top mt-5">
-      <div className="container">
-        <div className="row text-md-start text-center">
-          {/* Brand & Description */}
-          <div className="col-md-4 mb-4">
-            <Link
-              to="/"
-              className="text-decoration-none d-flex align-items-center justify-content-md-start justify-content-center mb-3"
-            >
+    <footer className="bg-dark text-white pt-5 pb-4 mt-auto border-top">
+      <div className="container px-4">
+        <div className="row g-4 mb-5">
+          {/* Brand Info & Newsletter */}
+          <div className="col-lg-4 col-md-6">
+            <div className="d-flex align-items-center mb-3">
               <img
                 src={logo}
                 alt="FileHub Logo"
-                width="30"
-                height="30"
-                className="me-2 rounded"
+                width="35"
+                height="35"
+                className="me-2 rounded shadow-sm"
               />
-              <span className="fw-bold text-dark fs-5">FileHub</span>
-            </Link>
-            <p className="text-muted small pr-md-5">
+              <span className="fw-bold fs-4 text-white">FileHub</span>
+            </div>
+            <p
+              className="text-secondary small mb-4"
+              style={{ lineHeight: "1.7" }}
+            >
               Everything you need to work with files. Edit, convert, organize,
               secure, and automate your documents smarter and faster.
             </p>
-            <div className="d-flex gap-3 justify-content-md-start justify-content-center mt-3">
-              <a href="#" className="text-secondary fs-5">
-                <i className="bi bi-twitter"></i>
+
+            {/* Social Icons */}
+            <div className="d-flex gap-3">
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noreferrer"
+                className="text-secondary fs-5 hover-light"
+              >
+                <i className="bi bi-twitter-x"></i>
               </a>
-              <a href="#" className="text-secondary fs-5">
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noreferrer"
+                className="text-secondary fs-5 hover-light"
+              >
                 <i className="bi bi-linkedin"></i>
               </a>
-              <a href="#" className="text-secondary fs-5">
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noreferrer"
+                className="text-secondary fs-5 hover-light"
+              >
                 <i className="bi bi-github"></i>
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noreferrer"
+                className="text-secondary fs-5 hover-light"
+              >
+                <i className="bi bi-instagram"></i>
               </a>
             </div>
           </div>
 
-          {/* Products */}
-          <div className="col-md-3 mb-4">
-            <h6 className="fw-bold text-dark mb-3">Products</h6>
-            <ul className="list-unstyled small">
-              <li className="mb-2">
+          {/* Products Links */}
+          <div className="col-lg-2 col-md-3 col-6">
+            <h6
+              className="fw-bold text-white mb-3"
+              style={{ letterSpacing: "0.5px" }}
+            >
+              Products
+            </h6>
+            <ul className="list-unstyled d-flex flex-column gap-2 small">
+              <li>
                 <Link
                   to="/pdf-tools"
-                  className="text-muted text-decoration-none"
+                  className="text-secondary text-decoration-none hover-light"
                 >
                   PDF Tools
                 </Link>
               </li>
-              <li className="mb-2">
-                <Link
-                  to="/ai-tools"
-                  className="text-muted text-decoration-none"
-                >
-                  AI Tools
-                </Link>
-              </li>
-              <li className="mb-2">
+              <li>
                 <Link
                   to="/form-builder"
-                  className="text-muted text-decoration-none"
+                  className="text-secondary text-decoration-none hover-light"
                 >
                   Form Builder
                 </Link>
               </li>
-              <li className="mb-2">
+              <li>
+                <Link
+                  to="/ai-tools"
+                  className="text-secondary text-decoration-none hover-light"
+                >
+                  AI Tools
+                </Link>
+              </li>
+              <li>
                 <Link
                   to="/templates"
-                  className="text-muted text-decoration-none"
+                  className="text-secondary text-decoration-none hover-light"
                 >
                   Templates
                 </Link>
@@ -77,59 +107,104 @@ function Footer() {
             </ul>
           </div>
 
-          {/* Solutions */}
-          <div className="col-md-3 mb-4">
-            <h6 className="fw-bold text-dark mb-3">Solutions</h6>
-            <ul className="list-unstyled small">
-              <li className="mb-2">
+          {/* Solutions Links */}
+          <div className="col-lg-2 col-md-3 col-6">
+            <h6
+              className="fw-bold text-white mb-3"
+              style={{ letterSpacing: "0.5px" }}
+            >
+              Solutions
+            </h6>
+            <ul className="list-unstyled d-flex flex-column gap-2 small">
+              <li>
                 <Link
                   to="/business-tools"
-                  className="text-muted text-decoration-none"
+                  className="text-secondary text-decoration-none hover-light"
                 >
-                  For Business
+                  Business Tools
                 </Link>
               </li>
-              <li className="mb-2">
-                <Link to="#" className="text-muted text-decoration-none">
-                  For Education
+              <li>
+                <Link
+                  to="/automations"
+                  className="text-secondary text-decoration-none hover-light"
+                >
+                  Automations
                 </Link>
               </li>
-              <li className="mb-2">
-                <Link to="/pricing" className="text-muted text-decoration-none">
-                  Pricing
+              <li>
+                <Link
+                  to="/pricing"
+                  className="text-secondary text-decoration-none hover-light"
+                >
+                  Pricing Plans
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/dashboard"
+                  className="text-secondary text-decoration-none hover-light"
+                >
+                  User Dashboard
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Company & Legal */}
-          <div className="col-md-2 mb-4">
-            <h6 className="fw-bold text-dark mb-3">Company</h6>
-            <ul className="list-unstyled small">
-              <li className="mb-2">
-                <Link to="#" className="text-muted text-decoration-none">
-                  About Us
-                </Link>
-              </li>
-              <li className="mb-2">
-                <Link to="#" className="text-muted text-decoration-none">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li className="mb-2">
-                <Link to="#" className="text-muted text-decoration-none">
-                  Contact
-                </Link>
-              </li>
-            </ul>
+          {/* Newsletter Subscription Box */}
+          <div className="col-lg-4 col-md-12">
+            <h6
+              className="fw-bold text-white mb-3"
+              style={{ letterSpacing: "0.5px" }}
+            >
+              Stay Updated
+            </h6>
+            <p className="text-secondary small mb-3">
+              Subscribe to our newsletter for the latest PDF and AI feature
+              updates.
+            </p>
+            <div className="input-group">
+              <input
+                type="email"
+                className="form-control bg-secondary bg-opacity-25 border-0 text-white px-3 py-2 shadow-none"
+                placeholder="Enter your email"
+                style={{ fontSize: "14px" }}
+              />
+              <button
+                className="btn btn-primary px-3 fw-bold"
+                type="button"
+                style={{ fontSize: "14px" }}
+              >
+                Subscribe
+              </button>
+            </div>
           </div>
         </div>
 
-        <hr className="text-muted my-4" />
-
-        <div className="row">
-          <div className="col-12 text-center text-muted small">
-            &copy; {new Date().getFullYear()} FileHub. All rights reserved.
+        {/* Bottom Copyright & Legal Links */}
+        <div className="border-top border-secondary border-opacity-25 pt-4 d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+          <p className="text-secondary small mb-0">
+            &copy; 2026 FileHub Technologies Inc. All rights reserved.
+          </p>
+          <div className="d-flex gap-4 small text-secondary">
+            <a
+              href="#"
+              className="text-decoration-none text-secondary hover-light"
+            >
+              Privacy Policy
+            </a>
+            <a
+              href="#"
+              className="text-decoration-none text-secondary hover-light"
+            >
+              Terms of Service
+            </a>
+            <a
+              href="#"
+              className="text-decoration-none text-secondary hover-light"
+            >
+              Security
+            </a>
           </div>
         </div>
       </div>
